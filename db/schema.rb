@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20181203142244) do
+ActiveRecord::Schema.define(version: 20181204052325) do
 
   create_table "conversations", force: :cascade do |t|
     t.integer "sender_id"
@@ -96,6 +96,8 @@ ActiveRecord::Schema.define(version: 20181203142244) do
     t.datetime "reset_sent_at"
     t.string "picture"
     t.integer "micropost_id"
+    t.string "provider"
+    t.string "uid"
     t.index ["email"], name: "index_users_on_email", unique: true
   end
 

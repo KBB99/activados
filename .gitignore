@@ -10,3 +10,6 @@
 
 #Ignore uploaded test images.
 /public/uploads
+
+#API Keys
+/secrets

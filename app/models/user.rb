@@ -15,10 +15,11 @@ class User < ApplicationRecord
     has_secure_password
     validates :password, presence: true, length: { minimum: 6 }, allow_nil: true
     attr_accessor :validation_code, :flash_notice
-    validate :nyu_edu
+    # validate :nyu_edu
     mount_uploader :picture, PictureUploader
     has_many :likes
     has_many :liked_notes, through: :likes, source: :note
+    devise :omniauthable, :omniauth_providers => [:facebook]
 
     class << self
     # Returns the hash digest of the given string.
@@ -108,4 +109,24 @@ class User < ApplicationRecord
       self.activation_token  = User.new_token
       self.activation_digest = User.digest(activation_token)
     end
+
+    def self.new_with_session(params, session)
+        super.tap do |user|
+          if data = session["devise.facebook_data"] && session["devise.facebook_data"]["extra"]["raw_info"]
+            user.email = data["email"] if user.email.blank?
+          end
+        end
+    end
+      
+    def self.from_omniauth(auth)
+        where(provider: auth.provider, uid: auth.uid).first_or_create do |user|
+            user.email = auth.info.email
+            user.password = Devise.friendly_token[0,20]
+            name = auth.info.name.split()
+            user.first_name = name[0]
+            user.last_name = name[1]   # assuming the user model has a name
+            user.picture = auth.info.image # assuming the user model has an image
+        end
+    end
+
   end
