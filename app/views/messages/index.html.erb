@@ -1,0 +1,302 @@
+
+<%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload'%>
+<body class="profile-page sidebar-collapse">
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg bg-primary fixed-top navbar-transparent " color-on-scroll="400">
+    <div class="container">
+      <div class="dropdown button-dropdown">
+        <a href="#pablo" class="dropdown-toggle" id="navbarDropdown" data-toggle="dropdown">
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <a class="dropdown-header">Dropdown header</a>
+          <a class="dropdown-item" href="#">Action</a>
+          <a class="dropdown-item" href="#">Another action</a>
+          <a class="dropdown-item" href="#">Something else here</a>
+          <div class="dropdown-divider"></div>
+          <a class="dropdown-item" href="#">Separated link</a>
+          <div class="dropdown-divider"></div>
+          <a class="dropdown-item" href="#">One more separated link</a>
+        </div>
+      </div>
+      <div class="navbar-translate">
+        <a class="navbar-brand" rel="tooltip" data-placement="bottom" target="_blank">
+          Activados
+        </a>
+        <button class="navbar-toggler navbar-toggler" type="button" data-toggle="collapse" data-target="#navigation" aria-controls="navigation-index" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-bar top-bar"></span>
+          <span class="navbar-toggler-bar middle-bar"></span>
+          <span class="navbar-toggler-bar bottom-bar"></span>
+        </button>
+      </div>
+      <div class="collapse navbar-collapse justify-content-end" id="navigation" data-nav-image="../assets/img/blurred-image-1.jpg">
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a class="nav-link" href="../index.html">Documentos</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" rel="tooltip" title="Siguenos en Twitter" data-placement="bottom" href="#" target="_blank">
+              <i class="fab fa-twitter"></i>
+              <p class="d-lg-none d-xl-none">Twitter</p>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" rel="tooltip" title="Danos un me gusta en Facebook" data-placement="bottom" href="http://elvenezolano.com.pa/activados-panama-dicto-la-charla-migracion-inteligente/?fbclid=IwAR293cTuUkSwjHClvUZQzYS1hvp1YyfRitAhHxGTT_Q_YlFpWO66tllmIjg" target="_blank">
+              <i class="fab fa-facebook-square"></i>
+              <p class="d-lg-none d-xl-none">Facebook</p>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" rel="tooltip" title="Siguenos en Instagram" data-placement="bottom" href="https://www.instagram.com/activadospanama/" target="_blank">
+              <i class="fab fa-instagram"></i>
+              <p class="d-lg-none d-xl-none">Instagram</p>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  <!-- End Navbar -->
+  <div class="wrapper">
+    <div class="page-header clear-filter" filter-color="orange">
+      <div class="page-header-image" data-parallax="true" style="background-image:url('../assets/img/bg5.jpg');">
+      </div>
+      <div class="container">
+        <div class="photo-container">
+          <%# <img src="/assets/img/ryan.jpg" alt=""> %>
+        </div>
+        <h3 class="title"><%=@me.first_name%> <%=@me.last_name%></h3>
+      </div>
+    </div>
+    <div class="section">
+      <div class="container">
+        <div class="button-container">
+          <a href="#button" class="btn btn-primary btn-round btn-lg">Documentos</a>
+        </div>
+        <h3 class="title">Progreso</h3>
+        <div class="progress-container">
+            <span class="progress-badge">Total</span>
+            <div class="progress">
+                <div class="progress-bar" role="prgressbar" aria-avaluenow="35" aria-valuemax="100" style="width: 35%;">
+                    <span class="progress-value">35%</span>
+                </div>
+            </div>
+        </div>
+        <div class="progress-container progress-primary">
+            <span class="progress-badge">Documentos</span>
+            <div class="progress">
+                <div class="progress-bar progress-bar-warning" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 60%;">
+                <span class="progress-value">60%</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="progress-container progress-info">
+            <span class="progress-badge">Procesamiento</span>
+            <div class="progress">
+                <div class="progress-bar progress-bar-warning" role="progressbar" aria-valuenow="5" aria-valuemin="0" aria-valuemax="100" style="width: 10%;">
+                    <span class="progress-value">10%</span>
+                </div>
+            </div>
+        </div>
+
+        <h5 class="description">Aquí estará toda la información necesaria para que inmigres con facilidad. Si tienes alguna pregunta usa el sistema de chat para contactarte con un representante.<h5>
+        <div class="row">
+          <div class="col-md-6 ml-auto mr-auto">
+            <h4 class="title text-center">Documentos</h4>
+            <div class="nav-align-center">
+              <ul class="nav nav-pills nav-pills-primary nav-pills-just-icons" role="tablist">
+                <li class="nav-item">
+                  <a class="nav-link" data-toggle="tab" href="#profile" role="tablist">
+                    <i class="now-ui-icons design_image"></i>
+                  </a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link active" data-toggle="tab" href="#home" role="tablist">
+                    <i class="now-ui-icons location_world"></i>
+                  </a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" data-toggle="tab" href="#messages" role="tablist">
+                    <i class="now-ui-icons sport_user-run"></i>
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <!-- Tab panes -->
+          <div class="tab-content gallery">
+            <div class="tab-pane active" id="home" role="tabpanel">
+              <div class="col-md-10 ml-auto mr-auto">
+                <div class="row collections">
+                  <div class="col-md-6">
+                    <img src="../assets/img/bg1.jpg" alt="" class="img-raised">
+                    <img src="../assets/img/bg3.jpg" alt="" class="img-raised">
+                  </div>
+                  <div class="col-md-6">
+                    <img src="../assets/img/bg8.jpg" alt="" class="img-raised">
+                    <img src="../assets/img/bg7.jpg" alt="" class="img-raised">
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="tab-pane" id="profile" role="tabpanel">
+              <div class="col-md-10 ml-auto mr-auto">
+                <div class="row collections">
+                  <div class="col-md-6">
+                    <img src="../assets/img/bg6.jpg" class="img-raised">
+                    <img src="../assets/img/bg11.jpg" alt="" class="img-raised">
+                  </div>
+                  <div class="col-md-6">
+                    <img src="../assets/img/bg7.jpg" alt="" class="img-raised">
+                    <img src="../assets/img/bg8.jpg" alt="" class="img-raised">
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="tab-pane" id="messages" role="tabpanel">
+              <div class="col-md-10 ml-auto mr-auto">
+                <div class="row collections">
+                  <div class="col-md-6">
+                    <img src="../assets/img/bg3.jpg" alt="" class="img-raised">
+                    <img src="../assets/img/bg8.jpg" alt="" class="img-raised">
+                  </div>
+                  <div class="col-md-6">
+                    <img src="../assets/img/bg7.jpg" alt="" class="img-raised">
+                    <img src="../assets/img/bg6.jpg" class="img-raised">
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <ul class="nav nav-pills nav-pills-primary nav-pills-just-icons" role="tablist" id="chat-right">
+      <li class="nav-item">
+        <button class="nav-link active" type="button" data-toggle="collapse" data-target="#floating-chat" aria-expanded="false" aria-controls="sidebar-floating-chat">
+          <i class="fa fa-comments"></i>
+        </button>
+      </li>
+    </ul>
+    <footer class="footer footer-default">
+      <div class="container">
+        <nav>
+          <ul>
+            <li>
+              <a href="http://mailto:activadospanama.org">
+                Contáctanos
+              </a>
+            </li>
+            <li>
+              <a href="http://activadospanama.com/?page_id=29">
+                Noticias
+              </a>
+            </li>
+          </ul>
+        </nav>
+        <div class="copyright" id="copyright">
+          &copy;
+          <script>
+            document.getElementById('copyright').appendChild(document.createTextNode(new Date().getFullYear()))
+          </script>,
+          <a href="https://www.kblack.design" target="_blank">Kblack Design</a>.
+        </div>
+      </div>
+    </footer>
+  </div>
+  <div class="sidebar-floating collapse collapse" id="floating-chat" style="">
+    <div class="sidebar-content">
+        <div class="chat-module" data-filter-list="chat-module-body">
+            <div class="chat-module-top">
+                <form>
+                    <div class="input-group input-group-round">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text">
+                                <i class="material-icons"></i>
+                            </span>
+                        </div>
+                        <input type="search" class="form-control filter-list-input" placeholder="Search chat" aria-label="Search Chat" aria-describedby="search-chat">
+                    </div>
+                </form>
+                    <div class="chat-module-body filter-list-1540911837798 filter-list-1544176316151" id="messages-table"><div class="media chat-item">
+                    </div></div>
+            </div>
+            <div class="chat-module-bottom">
+                <form class="chat-form" id="new_message" action="/messages" accept-charset="UTF-8" data-remote="true" method="post"><input name="utf8" type="hidden" value="✓"><input type="hidden" name="authenticity_token" value="lMStlod5QTCmuSNu1mAFi2IG+GoIqvg2O5Rl3j8t8+dKnftQAdNkdPmIf+XDYfSohnBtnxze2F1bWDl2y5DMbQ==">
+                <input value="12" type="hidden" name="message[micropost_id]" id="message_micropost_id">
+                <input value="1" type="hidden" name="message[user_id]" id="message_user_id">
+                <textarea class="form-control" placeholder="Type message" rows="1" style="overflow: hidden; overflow-wrap: break-word; resize: none; height: 40px;" data-textarea="body" name="message[body]" id="message_body"></textarea>
+
+                <input type="submit" name="commit" value="Send" style="display: none;" id="chat-send" data-disable-with="Send">
+            </form>
+            </div>
+        </div>
+    </div>
+</div>
+  <!--   Core JS Files   -->
+<style>
+  #chat-right{
+    float: right;
+  }
+
+  .sidebar-floating {
+    position: fixed;
+    right: 1.5rem;
+    bottom: 6rem;
+    height: calc(100vh - 8rem) !important;
+    border-radius: 0.5rem;
+    box-shadow: 0 0.1875rem 0.375rem rgba(33, 37, 41, 0.1);
+    border: 1px solid #E9EEF2;
+    background: #fff;
+    z-index: 1060;
+    transition: opacity .35s ease, transform .35s ease !important;
+    width: calc(100vw - 3rem);
+}
+  .sidebar-floating .sidebar-content {
+      height: 100%;
+  }
+
+  .sidebar-content {
+    max-height: 100%;
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+}
+
+  .chat-module {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    justify-content: space-between;
+}
+
+.chat-form {
+    position: relative;
+}
+
+.chat-module .chat-module-top {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    max-height: calc(100% - 3.5rem);
+    position: relative;
+}
+  .chat-module .chat-module-body {
+    width: 100%;
+    position: absolute;
+    top: 4rem;
+    height: calc(100% - 4rem);
+    overflow-y: scroll;
+    padding-right: 1.5rem;
+    -ms-overflow-style: none;
+}
+  .chat-module .chat-module-bottom {
+    position: relative;
+    padding-top: 1rem;
+    border-top: 1px solid #E9EEF2;
+    background: #fff;
+}
+
+</style>

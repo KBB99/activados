@@ -27,14 +27,15 @@ Rails.application.routes.draw do
 
   resources :subjects
 
+  #Google and Facebook Login
+  
   devise_for :users, :controllers => { :omniauth_callbacks => "users/omniauth_callbacks" }
-  #Likes
  
 
   
   
   #Static pages
-
+  get 'demo' => 'users#demo'
   root 'users#home'
   get 'logout' => 'sessions#destroy'
   get 'AllProjects' => "users#all_projects" 
@@ -44,7 +45,7 @@ Rails.application.routes.draw do
   # get 'projects' => 'static_pages#help'
   get 'about' => 'static_pages#about'
   get 'contact' => 'static_pages#contact'
-  get 'signup' => 'users#new'
+  get 'signup' => 'sessions#n_user'
   get 'users/:id/details', to: 'users#details', :as => 'details'
   get 'microposts/:id', to: 'microposts#show', :as => "project"
   get 'users/:id/profile', to: 'users#profile', :as => 'profile'

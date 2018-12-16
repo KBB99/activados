@@ -6,8 +6,6 @@ class User < ApplicationRecord
     before_save :downcase_email
     before_create :create_activation_digest
     before_save { self.email = email.downcase }
-    validates :first_name,  presence: true, length: { maximum: 50 }
-    validates :last_name, presence: true, length: {maximum: 50}
     VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
     validates :email, presence: true, length: { maximum: 255 },
                       format: { with: VALID_EMAIL_REGEX },
@@ -19,7 +17,7 @@ class User < ApplicationRecord
     mount_uploader :picture, PictureUploader
     has_many :likes
     has_many :liked_notes, through: :likes, source: :note
-    devise :omniauthable, :omniauth_providers => [:facebook]
+    devise :omniauthable, :omniauth_providers => [:facebook, :google_oauth2]
 
     class << self
     # Returns the hash digest of the given string.
@@ -85,11 +83,6 @@ class User < ApplicationRecord
     end
 
     # Makes sure it's an NYU Email
-
-    def nyu_edu
-      @domain = self.email.split('@')[1]
-      errors.add(:base, 'For now we only support New York University') unless @domain == 'nyu.edu'
-    end
 
     #Push Notifications
 

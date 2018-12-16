@@ -22,6 +22,13 @@ class UsersController < ApplicationController
     end
   end
 
+  def demo
+  end
+
+  def home
+    @user = User.new
+  end
+
 
   def all_projects
     if logged_in?
@@ -45,14 +52,6 @@ class UsersController < ApplicationController
       
       if @project.save
         @user.microposts << @project
-        
-        # @project.users << @user.microposts
-        # @project.users.each do |s|
-          
-          # @project << s
-          # s << @project
-
-        # end
         flash[:success] = "Project created succesfully!"
         render 'index'
       else
@@ -74,7 +73,6 @@ class UsersController < ApplicationController
   end
 
   def new
-    @user = User.new
   end
 
   def details
@@ -88,7 +86,7 @@ class UsersController < ApplicationController
       flash[:info] = "Please check your email to activate your account."
       redirect_to root_url
     else
-      render 'new'
+      redirect_to '/sessions/new'
     end
   end
 
@@ -129,21 +127,8 @@ class UsersController < ApplicationController
   end
 
   def edit
-    # include FotitosController
-    # byebug
     @user = User.find(params[:id])
-    # if @user.update_attributes(user_params)
-    #   # flash[:success] = "Profile updated"
-    #   redirect_to @user
-    # else
-    #   render 'edit'
-    # end
   end
-
-  def profile_picture
-    # @picture = 
-  end
-
 
   def JoinClass
     @class = Subject.find(params[:subject])
@@ -152,18 +137,8 @@ class UsersController < ApplicationController
     end
     redirect_to request.referrer
   end
-  private
 
-    # def nyu_edu?
-    #   @domain = @user.email.split('@')[1]
-    #   if @domain != 'nyu.edu'
-    #       return true
-    #   # end
-    #   else
-    #       flash[:danger] = "At the moment we only support members of NYU"
-    #       return false
-    #   end
-    # end
+  private
 
     def fotito_params
       params.require(:fotito).permit(:content, :picture)

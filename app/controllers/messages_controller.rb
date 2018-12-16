@@ -4,24 +4,23 @@ class MessagesController < ApplicationController
     # @friend = User.find(@conversation.sender_id)
     # @other = User.find(@conversation.recipient_id)
     @me = User.find(current_user.id)
-    @project = Subject.find(params[:message][:micropost_id])
   end
   before_action :check_conversations
 
   def index
     @conversations = Conversation.all
-    @messages = @conversation.messages
+    # @messages = @conversation.messages
     
-    if params[:m]
-      @messages = @conversation.messages
-    end
-    if @messages.last
-      if @messages.last.user_id != current_user.id
-        @messages.last.read = true;
-      end
-    end
+    # if params[:m]
+    #   @messages = @conversation.messages
+    # end
+    # if @messages.last
+    #   if @messages.last.user_id != current_user.id
+    #     @messages.last.read = true;
+    #   end
+    # end
 
-    @message = @conversation.messages.new
+    # @message = @conversation.messages.new
   end
 
   def new

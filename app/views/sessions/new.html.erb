@@ -1,0 +1,42 @@
+
+
+<%= render 'header'%>
+            <%= form_for(:session, url: login_path) do |f| %>
+              <div class="card-header text-center">
+                <div class="logo-container">
+                  <img src="../assets/img/now-logo.png" alt="">
+                </div>
+              </div>
+              <div class="card-body">
+                <div class="input-group no-border input-lg">
+                  <div class="input-group-prepend">
+                    <span class="input-group-text">
+                      <i class="now-ui-icons users_circle-08"></i>
+                    </span>
+                  </div>
+                  <%= f.email_field :email, class: "form-control", type: "email", placeholder: "Correo electrónico..."%>
+                </div>
+                <div class="input-group no-border input-lg">
+                  <div class="input-group-prepend">
+                    <span class="input-group-text">
+                      <i class="now-ui-icons text_caps-small"></i>
+                    </span>
+                  </div>
+                  <%= f.password_field :password, class: 'form-control', type: "password", placeholder: "Contraseña..."%>
+                </div>
+              </div>
+              <div class="card-footer text-center">
+                <%= f.submit "Entrar", class: "btn btn-primary btn-round btn-lg btn-block"%>
+                <div class="pull">
+                  <h6>
+                    <%= link_to "Regístrate", "/signup", class:"link"%>
+                  </h6>
+                </div>
+            <%end%>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  <%=render 'footer'%>
+  </div>
