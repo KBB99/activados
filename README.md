@@ -32,7 +32,7 @@ bundle install
 rails db:migrate
 ```
 
-## Run on LocalHost
+## Run on Localhost
 
 ```shell
 rails server
