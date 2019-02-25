@@ -65,6 +65,7 @@ ActiveRecord::Schema.define(version: 20181204052325) do
     t.datetime "updated_at", null: false
     t.string "url"
     t.string "user_id"
+    t.string "content_type"
     t.index ["created_at"], name: "index_project_files_on_created_at"
     t.index ["micropost_id"], name: "index_project_files_on_micropost_id"
   end

@@ -20,6 +20,9 @@ gem 'redis'
 gem 'devise'
 gem 'omniauth-facebook'
 gem 'omniauth-google-oauth2'
+gem "nokogiri", ">=1.8.5"
+gem "rack", ">= 2.0.6"
+gem "loofah", ">= 2.2.3"
 
 group :development, :test do
   gem 'sqlite3', '1.3.13'
