@@ -1,6 +1,6 @@
 # README
 
-A web-app that connects Venezuelan immigrants with the NGO Activados Panama.
+A web-app that connects Venezuelan immigrants with the NGO Activados Panama. The live website is available at https://www.activados.org
 
 ## Getting Started
 
@@ -37,3 +37,7 @@ rails db:migrate
 ```shell
 rails server
 ```
+
+### Contact
+
+For any questions regarding Activados send an email to github@activados.org
